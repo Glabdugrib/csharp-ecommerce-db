@@ -25,5 +25,12 @@ namespace csharp_ecommerce_db
         [Column("email")]
         public string Email { get; set; }
         public List<Order> Orders { get; set; }
+
+        public Customer(string name, string surname, string email)
+        {
+            Name = name;
+            Surname = surname;
+            Email = email;
+        }
     }
 }

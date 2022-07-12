@@ -16,8 +16,6 @@ namespace csharp_ecommerce_db
         public int Id { get; set; }
         [Column("customer_id")]
         public int CustomerId { get; set; }
-        [Column("employee_id")]
-        public int EmployeeId { get; set; }
         [Column("date")]
         public DateTime Date { get; set; }
         [Column("amount")]
@@ -26,5 +24,21 @@ namespace csharp_ecommerce_db
         public string Status { get; set; }
         public Customer Customer { get; set; }
         public List<OrdersProducts> OrdersProducts { get; set; }
+
+        public Order(int customerId, DateTime date, string status)
+        {
+            CustomerId = customerId;
+            Date = date;
+            Status = status;
+        }
+
+        public void PrintInfo()
+        {
+            Console.WriteLine($"\nId: {Id}");
+            Console.WriteLine($"Customer id: {CustomerId}");
+            Console.WriteLine($"Date: {Date}");
+            Console.WriteLine($"Amount: {Amount}");
+            Console.WriteLine($"Status: {Status}");
+        }
     }
 }

@@ -24,5 +24,12 @@ namespace csharp_ecommerce_db
         [Column("price")]
         public decimal Price { get; set; }
         public List<OrdersProducts> OrdersProducts { get; set; }
+
+        public Product(string name, string description, decimal price)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+        }
     }
 }
